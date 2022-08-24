@@ -12,9 +12,9 @@ Get well-prepared for your next Laravel career!
 
 ### Basic
 
-1. Migrations & Seeders
-2. Routing
-3. Middlewares
+1. [Migrations & Seeders](https://github.com/sethsandaru/awesome-laravel-interviews#1-migrations--seeders)
+2. [Routing](https://github.com/sethsandaru/awesome-laravel-interviews#2-routing)
+3. [Middlewares](https://github.com/sethsandaru/awesome-laravel-interviews#3-middlewares)
 4. Requests
 5. Controllers
 6. Models / Eloquents / Query Builders
