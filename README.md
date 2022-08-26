@@ -1,11 +1,19 @@
 # Awesome Laravel Interview questions
 
-Get well-prepared for your next Laravel career! 
+Get well-prepared for your next Laravel career and push your Laravel knowledge to a new level, super advanced! 
 
+This will focus on **100% backend questions** based on Laravel framework. 
 
 ## Languages
 - English (this)
+- Vietnamese (coming soon)
 - ...
+
+## Other Recommendations
+- [PHP interview questions](https://github.com/DopplerHQ/awesome-interview-questions#php)
+- [Database interview questions](https://github.com/DopplerHQ/awesome-interview-questions#database-technologies)
+    - Main focus: MySQL/MariaDB or PostgreSQL
+- [System Designs](https://github.com/donnemartin/system-design-primer)
 
 ## Table of Contents
 
@@ -63,13 +71,26 @@ Get well-prepared for your next Laravel career!
 
 ### 3/ Middlewares
 
-1. Pros and Cons of `protected $middleware`?
+1. Pros and Cons of registering your custom middleware in `protected $middleware`?
     - Pros: my middleware will be triggered for every requests
     - Cons: I can't access to sessions or cookies because it will be computed in a later Middlewares (`web` group)
 2. Usage of `throttle`?
-    - 2 params: first one is the number of requests, second one is the allowance time. Eg: `throttle:300,1` means 300 requests in 1 minute
+    - throttle:300,1` means we only allow **300 requests** in **1 minute**
+    - Use it to avoid spaming requests
 3. We can handle things before the request is going to Controller, but can we handle something after the process of Controller finished?
     - Yes, basically we can invoke `$next($request)` and the line below, we can add our custom actions
+
+### 4/ Requests
+
+1. Do you use custom FormRequest? What are the benefis of using FormRequest.
+    - A single place to validate the request: authorization & data validation before going to Controller to be processed.
+    - Request can only reach to the Controller once everything is validated
+2. How can I perform some actions after the authorization check or validation check?
+    - Use `passedAuthorization()` and `passedValidation()` hooks to achieve that.
+3. What can I do more for my custom FormRequest class?
+    - You can implement `getter` methods eg `getAccount()`, `getTopic()` and make them return the **exact type**, so from your Controller to can retrieve the needful typed instances. A great help for IDE as well.
+
+### 5/ Controllers
 
 Coming soon...
 
