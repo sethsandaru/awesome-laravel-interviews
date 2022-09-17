@@ -74,8 +74,8 @@ This will focus on **100% backend questions** based on Laravel framework.
     - Pros: my middleware will be triggered for every requests
     - Cons: I can't access to sessions or cookies because it will be computed in a later Middlewares (`web` group)
 2. Usage of `throttle`?
-    - throttle:300,1` means we only allow **300 requests** in **1 minute**
-    - Use it to avoid spaming requests
+    - `throttle:300,1` means we only allow **300 requests** in **1 minute**
+    - Use it to avoid spaming/hijacking requests
 3. We can handle things before the request is going to Controller, but can we handle something after the process of Controller finished?
     - Yes, basically we can invoke `$next($request)` and the line below, we can add our custom actions
     ```php
