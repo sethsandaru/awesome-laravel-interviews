@@ -79,11 +79,13 @@ This will focus on **100% backend questions** based on Laravel framework.
 3. We can handle things before the request is going to Controller, but can we handle something after the process of Controller finished?
     - Yes, basically we can invoke `$next($request)` and the line below, we can add our custom actions
     ```php
-    Sample code:
+    // Sample Code
     public function handle(Request $request, Closure $next) {
         $result = $next($request);
         // do your own logic here
         Log::info('Request log:' . json_encode($result));
+        
+        return $result;
     }
     ```
 
