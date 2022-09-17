@@ -79,6 +79,14 @@ This will focus on **100% backend questions** based on Laravel framework.
     - Use it to avoid spaming requests
 3. We can handle things before the request is going to Controller, but can we handle something after the process of Controller finished?
     - Yes, basically we can invoke `$next($request)` and the line below, we can add our custom actions
+    ```php
+    Sample code:
+    public function handle(Request $request, Closure $next) {
+        $result = $next($request);
+        // do your own logic here
+        Log::info('Request log:' . json_encode($result));
+    }
+    ```
 
 ### 4/ Requests
 
@@ -92,7 +100,29 @@ This will focus on **100% backend questions** based on Laravel framework.
 
 ### 5/ Controllers
 
-Coming soon...
+1. Best practices of Controller?
+    - Use FormRequest to validate all of the data, then from Controller, we can start the processing without any checking.
+    - Prefer Dependency Injection (ideally in the method's parameters)
+    - If there are too much things to handle, create multiple services to handle instead of putting all logic in 1 place
+    - Always prepare the return type of Controller's methods (JsonResponse, ViewResponse,...)
+    - Follows Laravel's Resource structure (index, show, create, update,...)
+2. How I can invoke another Controller's method?
+    - You don't, and it is super bad practice. You need to extract the login into a Service, then inject the Service where you want to use.
+    - Following DRY - Don't repeat yourself
+3. Can I register my Controller without any methods in the `routes` file?
+    - You can, then you need to implement the `__invoke()` method in order to make it work.
+    
+### 6. Models / Eloquents / Query Builders
+
+1. How to avoid N+1 problems?
+    - By using eager-loading. 
+2. How to trace queries of Eloquents / Query Builders?
+    - You can use Laravel Debugbar, Ray, Telescope,...
+    - For PROD applications, you can use DataDog, BlackFire,...
+3. How to know which fields/columns that a single Eloquent Model has?
+    - We need to manually add the phpDoc and maintain the @property there. And it is IDE-friendly.
+
+Continue....
 
 ## Deep-dive Questions
 
