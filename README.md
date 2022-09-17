@@ -23,10 +23,9 @@ This will focus on **100% backend questions** based on Laravel framework.
 1. [Migrations & Seeders](https://github.com/sethsandaru/awesome-laravel-interviews#1-migrations--seeders)
 2. [Routing](https://github.com/sethsandaru/awesome-laravel-interviews#2-routing)
 3. [Middlewares](https://github.com/sethsandaru/awesome-laravel-interviews#3-middlewares)
-4. Requests
-5. Controllers
-6. Models / Eloquents / Query Builders
-7. Responses
+4. [Requests](https://github.com/sethsandaru/awesome-laravel-interviews/blob/main/README.md#4-requests)
+5. [Controllers](https://github.com/sethsandaru/awesome-laravel-interviews#5-controllers)
+6. [Models / Eloquents / Query Builders](https://github.com/sethsandaru/awesome-laravel-interviews#6-models--eloquents--query-builders)
 
 ### Deep-dive
 
