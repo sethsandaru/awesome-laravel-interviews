@@ -92,8 +92,8 @@ This will focus on **100% backend questions** based on Laravel framework.
 ### 4/ Requests
 
 1. Do you use custom FormRequest? What are the benefis of using FormRequest.
-    - A single place to validate the request: authorization & data validation before going to Controller to be processed.
-    - Request can only reach to the Controller once everything is validated
+    - A single place to validate the request: authorization & data validation before going to Controller.
+    - Request can only reach to the Controller once everything is validated (GOOD)
 2. How can I perform some actions after the authorization check or validation check?
     - Use `passedAuthorization()` and `passedValidation()` hooks to achieve that.
 3. What can I do more for my custom FormRequest class?
